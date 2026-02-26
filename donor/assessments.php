@@ -14,7 +14,7 @@ $assessments = $assessments->fetchAll();
 renderHead('Health Reports'); ?>
 <?php renderNav(); ?>
 <div class="page animate-in">
-  <a href="/donor/dashboard.php" class="back-link">← Back to Dashboard</a>
+  <a href="boc/donor/dashboard.php" class="back-link">← Back to Dashboard</a>
   <h1 class="page-title">Health <span>Reports</span></h1>
   <p class="page-subtitle">Your complete medical assessment history from each donation.</p>
 

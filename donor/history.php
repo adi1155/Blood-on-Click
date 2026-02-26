@@ -17,7 +17,7 @@ $totalUnits = array_sum(array_column(iterator_to_array((function($a){foreach($a 
 renderHead('Donation History'); ?>
 <?php renderNav(); ?>
 <div class="page animate-in">
-  <a href="/donor/dashboard.php" class="back-link">← Back to Dashboard</a>
+  <a href="/boc/donor/dashboard.php" class="back-link">← Back to Dashboard</a>
   <h1 class="page-title">Donation <span>History</span></h1>
   <p class="page-subtitle">Complete record of all your blood donations.</p>
 

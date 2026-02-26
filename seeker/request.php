@@ -132,7 +132,7 @@ renderHead('My Blood Requests'); ?>
           <?= $r['units_needed'] ?> unit(s) &nbsp;·&nbsp; <?= date('d M Y H:i',strtotime($r['created_at'])) ?>
         </div>
         <?php if($r['status']==='open'): ?>
-        <form method="POST" action="/api/update_request.php" style="display:inline;margin-top:.5rem;">
+        <form method="POST" action="/boc/api/update_request.php" style="display:inline;margin-top:.5rem;">
           <input type="hidden" name="request_id" value="<?= $r['id'] ?>">
           <input type="hidden" name="status" value="cancelled">
           <button type="submit" class="btn btn-danger btn-sm">Cancel Request</button>

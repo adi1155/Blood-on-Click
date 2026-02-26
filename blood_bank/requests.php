@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_status'])) {
     $rid    = (int)$_POST['request_id'];
     $status = in_array($_POST['status'],['open','fulfilled','cancelled']) ? $_POST['status'] : 'open';
     $db->prepare("UPDATE blood_requests SET status=? WHERE id=?")->execute([$status,$rid]);
-    header('Location: /blood_bank/requests.php'); exit;
+    header('Location: /boc/blood_bank/requests.php'); exit;
 }
 
 $filter   = $_GET['status'] ?? 'open';
@@ -26,7 +26,7 @@ renderHead('Requests'); ?>
 <div class="page animate-in">
   <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:2rem;">
     <div>
-      <a href="/blood_bank/dashboard.php" class="back-link">← Back to Dashboard</a>
+      <a href="/boc/blood_bank/dashboard.php" class="back-link">← Back to Dashboard</a>
       <h1 class="page-title">Blood <span>Requests</span></h1>
       <p class="page-subtitle">Requests in <?= htmlspecialchars($bank['city']) ?></p>
     </div>

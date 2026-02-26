@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 renderHead('Send Notification'); ?>
 <?php renderNav(); ?>
 <div class="page animate-in" style="max-width:700px;">
-  <a href="/blood_bank/dashboard.php" class="back-link">← Back to Dashboard</a>
+  <a href="/boc/blood_bank/dashboard.php" class="back-link">← Back to Dashboard</a>
   <h1 class="page-title">Send <span>Notification</span></h1>
   <p class="page-subtitle">Alert donors or other blood banks about urgent needs or stock status.</p>
 

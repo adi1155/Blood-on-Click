@@ -39,7 +39,7 @@ $stockMap = []; foreach($stock as $s) $stockMap[$s['blood_group']] = $s;
 renderHead('Manage Stock'); ?>
 <?php renderNav(); ?>
 <div class="page animate-in">
-  <a href="/blood_bank/dashboard.php" class="back-link">← Back to Dashboard</a>
+  <a href="/boc/blood_bank/dashboard.php" class="back-link">← Back to Dashboard</a>
   <h1 class="page-title">Blood <span>Stock Management</span></h1>
   <p class="page-subtitle"><?= htmlspecialchars($bank['name']) ?> — Update and monitor blood unit levels.</p>
 

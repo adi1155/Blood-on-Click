@@ -71,7 +71,7 @@ renderHead('Find Donors & Banks'); ?>
         <input type="text" name="city" placeholder="e.g. Lahore" value="<?= htmlspecialchars($city) ?>">
       </div>
       <button type="submit" class="btn btn-primary" style="align-self:flex-end;">Search</button>
-      <?php if($searched): ?><a href="/seeker/search.php" class="btn btn-secondary" style="align-self:flex-end;">Clear</a><?php endif; ?>
+      <?php if($searched): ?><a href="/boc/seeker/search.php" class="btn btn-secondary" style="align-self:flex-end;">Clear</a><?php endif; ?>
     </div>
   </form>
 

@@ -13,7 +13,7 @@ $bbStmt->execute([$uid]);
 $bank = $bbStmt->fetch();
 
 if (!$bank) {
-    header('Location: /dashboard.php'); exit;
+    header('Location: /boc/dashboard.php'); exit;
 }
 $bid = $bank['id'];
 
@@ -41,16 +41,16 @@ renderHead('Blood Bank Dashboard'); ?>
       <p class="page-subtitle">📍 <?= htmlspecialchars($bank['address']) ?> &nbsp;·&nbsp; <?= htmlspecialchars($bank['city']) ?></p>
     </div>
     <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
-      <a href="/blood_bank/stock.php" class="btn btn-secondary">📊 Manage Stock</a>
-      <a href="/blood_bank/send_notification.php" class="btn btn-warning">🔔 Send Alert</a>
-      <a href="/blood_bank/requests.php" class="btn btn-primary">📋 All Requests</a>
+      <a href="/boc/blood_bank/stock.php" class="btn btn-secondary">📊 Manage Stock</a>
+      <a href="/boc/blood_bank/send_notification.php" class="btn btn-warning">🔔 Send Alert</a>
+      <a href="/boc/blood_bank/requests.php" class="btn btn-primary">📋 All Requests</a>
     </div>
   </div>
 
   <?php if($criticalCount > 0): ?>
   <div class="alert alert-warning" style="margin-bottom:1.5rem;">
     ⚠ <strong><?= $criticalCount ?> blood group(s)</strong> are below the alert threshold. Consider sending a donor notification immediately.
-    <a href="/blood_bank/send_notification.php" style="margin-left:.5rem;color:#fb923c;font-weight:600;">Send Alert →</a>
+    <a href="/boc/blood_bank/send_notification.php" style="margin-left:.5rem;color:#fb923c;font-weight:600;">Send Alert →</a>
   </div>
   <?php endif; ?>
 
@@ -65,7 +65,7 @@ renderHead('Blood Bank Dashboard'); ?>
   <div class="grid-2" style="gap:1.5rem;">
     <!-- Stock Overview -->
     <div>
-      <div class="section-header"><h2 class="section-title">Blood Stock Levels</h2><a href="/blood_bank/stock.php" class="btn btn-secondary btn-sm">Edit Stock</a></div>
+      <div class="section-header"><h2 class="section-title">Blood Stock Levels</h2><a href="/boc/blood_bank/stock.php" class="btn btn-secondary btn-sm">Edit Stock</a></div>
       <div class="card" style="padding:1rem;">
         <?php
         $maxCap = 50; // display max
@@ -91,7 +91,7 @@ renderHead('Blood Bank Dashboard'); ?>
 
     <!-- Incoming Requests -->
     <div>
-      <div class="section-header"><h2 class="section-title">Incoming Requests</h2><a href="/blood_bank/requests.php" class="btn btn-secondary btn-sm">View All</a></div>
+      <div class="section-header"><h2 class="section-title">Incoming Requests</h2><a href="/boc/blood_bank/requests.php" class="btn btn-secondary btn-sm">View All</a></div>
       <?php if(empty($requests)): ?>
         <div class="empty-state"><div class="icon">📋</div><p>No open requests in <?= htmlspecialchars($bank['city']) ?>.</p></div>
       <?php else: foreach($requests as $r): ?>

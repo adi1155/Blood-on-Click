@@ -31,8 +31,8 @@ renderHead('Seeker Dashboard'); ?>
       <p class="page-subtitle">Seeker Dashboard &nbsp;·&nbsp; <?= htmlspecialchars($me['city']) ?></p>
     </div>
     <div style="display:flex;gap:.75rem;">
-      <a href="/seeker/search.php" class="btn btn-primary">🔍 Find Donors</a>
-      <a href="/seeker/request.php" class="btn btn-secondary">➕ New Request</a>
+      <a href="/boc/seeker/search.php" class="btn btn-primary">🔍 Find Donors</a>
+      <a href="/boc/seeker/request.php" class="btn btn-secondary">➕ New Request</a>
     </div>
   </div>
 
@@ -46,7 +46,7 @@ renderHead('Seeker Dashboard'); ?>
   <div class="grid-2" style="gap:1.5rem;">
     <div>
       <!-- My Requests -->
-      <div class="section-header"><h2 class="section-title">My Requests</h2><a href="/seeker/request.php" class="btn btn-primary btn-sm">+ New</a></div>
+      <div class="section-header"><h2 class="section-title">My Requests</h2><a href="/boc/seeker/request.php" class="btn btn-primary btn-sm">+ New</a></div>
       <div class="table-wrapper">
         <table>
           <thead><tr><th>Blood Group</th><th>Units</th><th>Hospital</th><th>Urgency</th><th>Status</th></tr></thead>
@@ -68,7 +68,7 @@ renderHead('Seeker Dashboard'); ?>
 
       <!-- Nearby Blood Banks -->
       <div style="margin-top:1.5rem;">
-        <div class="section-header"><h2 class="section-title">Blood Banks Near You</h2><a href="/search.php" class="btn btn-secondary btn-sm">More</a></div>
+        <div class="section-header"><h2 class="section-title">Blood Banks Near You</h2><a href="/boc/search.php" class="btn btn-secondary btn-sm">More</a></div>
         <?php foreach($banks as $b): ?>
         <div class="bank-card" style="margin-bottom:.75rem;">
           <div class="bank-name"><?= htmlspecialchars($b['name']) ?></div>
@@ -81,7 +81,7 @@ renderHead('Seeker Dashboard'); ?>
 
     <!-- Available Donors (color-coded blood group icons) -->
     <div>
-      <div class="section-header"><h2 class="section-title">Available Donors Near You</h2><a href="/seeker/search.php" class="btn btn-secondary btn-sm">Search</a></div>
+      <div class="section-header"><h2 class="section-title">Available Donors Near You</h2><a href="/boc/seeker/search.php" class="btn btn-secondary btn-sm">Search</a></div>
       <p style="font-size:.78rem;color:var(--text-muted);margin-bottom:1rem;">Color-coded by blood group. Click a donor for contact details.</p>
       <div class="grid-auto">
         <?php foreach($donors as $d):
@@ -106,7 +106,7 @@ renderHead('Seeker Dashboard'); ?>
         </div>
         <?php endforeach; ?>
         <?php if(empty($donors)): ?>
-          <div style="grid-column:1/-1;"><div class="empty-state"><div class="icon">🔍</div><p>No available donors found in <?= htmlspecialchars($me['city']) ?>.<br><a href="/seeker/search.php">Search other cities →</a></p></div></div>
+          <div style="grid-column:1/-1;"><div class="empty-state"><div class="icon">🔍</div><p>No available donors found in <?= htmlspecialchars($me['city']) ?>.<br><a href="/boc/seeker/search.php">Search other cities →</a></p></div></div>
         <?php endif; ?>
       </div>
     </div>

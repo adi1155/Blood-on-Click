@@ -5,6 +5,7 @@ require_once 'config/layout.php';
 require_once 'config/auth.php';
 requireLogin();
 
+
 $db   = getDB();
 $type = $_GET['type'] ?? 'donors';
 $bg   = $_GET['blood_group'] ?? '';
@@ -33,10 +34,10 @@ if ($searched) {
             $params2 = [$b['id']]; if($bg) $params2[]=$bg;
             $s->execute($params2); $b['stock'] = $s->fetchAll(PDO::FETCH_KEY_PAIR);
         }
-        $results = $bg ? array_filter($banks, fn($b)=>!empty($b['stock'])) : $banks;
+        unset($b); // break reference from foreach
+        $results = $bg ? array_values(array_filter($banks, fn($b)=>!empty($b['stock']))) : $banks;
     }
 }
-
 renderHead('Search'); ?>
 <?php renderNav(); ?>
 <div class="page animate-in">
@@ -64,7 +65,7 @@ renderHead('Search'); ?>
         <input type="text" name="city" placeholder="e.g. Lahore" value="<?= htmlspecialchars($city) ?>">
       </div>
       <button type="submit" class="btn btn-primary" style="align-self:flex-end;">Search</button>
-      <?php if($searched): ?><a href="/search.php?type=<?= $type ?>" class="btn btn-secondary" style="align-self:flex-end;">Clear</a><?php endif; ?>
+      <?php if($searched): ?><a href="/boc/search.php?type=<?= $type ?>" class="btn btn-secondary" style="align-self:flex-end;">Clear</a><?php endif; ?>
     </div>
   </form>
 

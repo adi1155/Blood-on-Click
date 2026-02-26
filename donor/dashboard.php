@@ -26,8 +26,8 @@ renderHead('Donor Dashboard');
       <p class="page-subtitle">Donor Dashboard &nbsp;·&nbsp; <?= bloodGroupBadge($me['blood_group'], true) ?></p>
     </div>
     <div style="display:flex;gap:.75rem;">
-      <a href="/donor/history.php" class="btn btn-secondary">📋 My History</a>
-      <a href="/search.php" class="btn btn-primary">🏥 Find Banks</a>
+      <a href="/boc/donor/history.php" class="btn btn-secondary">📋 My History</a>
+      <a href="/boc/search.php" class="btn btn-primary">🏥 Find Banks</a>
     </div>
   </div>
 

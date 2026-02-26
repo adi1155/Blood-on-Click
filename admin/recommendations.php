@@ -48,7 +48,7 @@ renderHead('Recommendations'); ?>
               <select name="user_id">
                 <option value="">Select user</option>
                 <?php foreach($users as $u): ?>
-                  <option value="<?= $u['id'] ?>"><?= htmlspecialchars($u['full_name']) ?> — <?= ucfirst($u['role']) ?> <?= $u['blood_group']?"({$u['blood_group']})"?'' ?> — <?= $u['city'] ?></option>
+                  <option value="<?= $u['id'] ?>"><?= htmlspecialchars($u['full_name']) ?> — <?= ucfirst($u['role']) ?> <?= $u['blood_group']?"({$u['blood_group']})":'' ?> — <?= $u['city'] ?></option>
                 <?php endforeach; ?>
               </select>
             </div>

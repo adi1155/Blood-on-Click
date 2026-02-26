@@ -24,6 +24,7 @@ function renderNav(): void {
     $name    = htmlspecialchars($_SESSION['full_name'] ?? 'User');
     $unread  = getUnreadCount();
     $badge   = $unread > 0 ? "<span class='notif-badge'>{$unread}</span>" : '';
+    
 
     $roleLinks = match($role) {
         'admin'      => '
@@ -31,7 +32,7 @@ function renderNav(): void {
             <a href="/boc/admin/assessments.php">Assessments</a>
             <a href="/boc/admin/notifications.php">Notify</a>
             <a href="/boc/admin/recommendations.php">Recommend</a>
-            <a href="/search.php">Search</a>',
+            <a href="/boc/search.php">Search</a>',
         'blood_bank' => '
             <a href="/boc/blood_bank/dashboard.php">Dashboard</a>
             <a href="/boc/blood_bank/stock.php">Stock</a>
@@ -60,6 +61,7 @@ function renderNav(): void {
 
     echo <<<HTML
 <nav class="navbar">
+    
   <a href="/boc/dashboard.php" class="brand">
     <span class="brand-drop"></span>
     Blood<em>on</em>Click

@@ -41,9 +41,9 @@ renderHead('Admin — Users'); ?>
       <p class="page-subtitle">Admin control panel — manage all users and system activity.</p>
     </div>
     <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
-      <a href="/admin/add_user.php" class="btn btn-primary">+ Add User</a>
-      <a href="/admin/notifications.php" class="btn btn-warning">🔔 Broadcast</a>
-      <a href="/admin/assessments.php" class="btn btn-secondary">📋 Assessments</a>
+      <a href="boc/admin/add_user.php" class="btn btn-primary">+ Add User</a>
+      <a href="boc/admin/notifications.php" class="btn btn-warning">🔔 Broadcast</a>
+      <a href="boc/admin/assessments.php" class="btn btn-secondary">📋 Assessments</a>
     </div>
   </div>
 
